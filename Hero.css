@@ -1,0 +1,112 @@
+.hero-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+  padding: 80px 30px;
+  color: white;
+  margin: 20px 20px;
+  border: 2px solid #C940B7;
+  border-radius: 10px;
+  position: relative;
+  perspective: 1500px; 
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content {
+  max-width: 600px;
+  animation: fadeInUp 1s ease-out forwards; /* Smooth entry animation */
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: #c940b7;
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  transform-origin: center;
+  animation: bounceIn 1s ease-out forwards; /* Bounce effect on load */
+}
+
+.hero-content p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  margin: 4px 0;
+}
+
+.view-work-btn {
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  margin-top: 10px;
+  display: inline-block;
+  transition: 0.3s ease;
+}
+
+.view-work-btn:hover {
+  transform: scale(1.1); /* Subtle zoom effect */
+}
+
+.hero-image {
+  background-image: url('Profileimg.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 400px;
+  width: 400px;
+  margin-right: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+
+
+.hero-section:hover .hero-content {
+  transform: translateZ(20px) rotateY(5deg); /* Slight 3D movement for the text */
+}
+
+
+
+/* Animations for text */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-section {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-image img {
+    margin-bottom: 30px;
+  }
+}
